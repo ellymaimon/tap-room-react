@@ -13,13 +13,21 @@ function Header(){
           height: 80px;
           background-color: darkgrey;
           color: white;
+          display: flex;
+          align-items: center;
         }
+        p {
+          font-size: 22px;
+          margin-left: 50px;
+          text-decoration: none;
+        }
+        
       `}
       </style>
 
       <h1>🍺 React Tap Room 🍺</h1>
       <div className="nav">
-        <Link to="/">Home</Link>
+        <p><Link to="/">Home</Link></p>
       </div>
     </div>
   );
