@@ -16,7 +16,7 @@ function App(){
           font-family: sans-serif;
         }
       `} </style>
-      
+
       <Header/>
       <Switch>
         <Route exact path='/' component={KegList} />
