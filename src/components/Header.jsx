@@ -4,8 +4,23 @@ import { Link } from "react-router-dom";
 function Header(){
   return (
     <div>
+
+      <style jsx>{`
+        h1 {
+          text-align: center;
+        }
+        .nav {
+          height: 80px;
+          background-color: darkgrey;
+          color: white;
+        }
+      `}
+      </style>
+
       <h1>🍺 React Tap Room 🍺</h1>
-      <Link to="/">Home</Link>
+      <div className="nav">
+        <Link to="/">Home</Link>
+      </div>
     </div>
   );
 }
