@@ -9,7 +9,14 @@ import { Switch, Route } from "react-router-dom";
 
 function App(){
   return (
+
     <div>
+      <style global jsx> {`
+        * {
+            font-family: sans-serif;
+          }
+      `}
+      </style>
       <Header/>
       <Switch>
         <Route exact path='/' component={KegList} />
