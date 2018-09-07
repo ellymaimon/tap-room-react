@@ -10,6 +10,7 @@ function NewKegForm(){
           margin: 0 auto;
           border: 2px solid lightgrey;
           padding 25px;
+          border-radius: 25px;
         }
         label {
           font-weight: bold;
