@@ -5,15 +5,18 @@ function NewKegForm(){
     <div>
       <style jsx>
         {`
-        label {
-        
+        .form-group {
+          background-color: grey;
         }
         `}
       </style>
 
       <form>
-        <label>Name:</label>
-        <input type="text"/>
+        <div className="form-group">
+          <label>Name:</label>
+          <input type="text"/>
+        </div>
+
         <label>Brewer</label>
         <input type="text"/>
         <label>Description</label>
