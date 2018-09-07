@@ -5,7 +5,10 @@
 #### By Elly Maimon
 
 ## Description
-This project is a digital tap room initially built out in Angular, and recreated in React. 
+This project is a digital tap room initially built out in Angular, and recreated in React. The tap room lists different kegs of beer, and allows employees to sell pints, growlers, and large growlers while being notified of the remaining amount of beer remaining. It also allows employees to add/edit/delete kegs, and allows them to change their data or put them on sale. Users get a menu of the available kegs on tap and are able to sort/filter these kegs by their desired means.
+
+#### Some thoughts regarding Angular vs. React Development:
+* In Angular, components were responsible for specific functions of the application, whereas in React, components are representations of single UI/UX elements. Because of this, React feels more modular thus far. Angular, being a framework, seemed to guide the structure of the project with a heavier hand than React does. Also, being able to JS in conjunction with rendering HTML elements (JSX) feels more powerful than using angular directives directly in the HTML.
 
 ## User Stories
 * As a patron, I want to see a list/menu of all available kegs. For each keg, I need to see its name, brand, price and alcoholContent.
