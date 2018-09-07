@@ -12,7 +12,7 @@ This project is a digital tap room initially built out in Angular, and recreated
 
 ## Component Tree
 
-![Tap Room Component Tree](Tap-Room-Components.png)
+![Tap Room Component Tree](./src/assets/Tap-Room-Components.png)
 
 ## User Stories
 * As a patron, I want to see a list/menu of all available kegs. For each keg, I need to see its name, brand, price and alcoholContent.
