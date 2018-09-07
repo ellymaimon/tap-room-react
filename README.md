@@ -10,6 +10,10 @@ This project is a digital tap room initially built out in Angular, and recreated
 #### Some thoughts regarding Angular vs. React Development:
 * In Angular, components were responsible for specific functions of the application, whereas in React, components are representations of single UI/UX elements. Because of this, React feels more modular thus far. Angular, being a framework, seemed to guide the structure of the project with a heavier hand than React does. Also, being able to JS in conjunction with rendering HTML elements (JSX) feels more powerful than using angular directives directly in the HTML.
 
+## Component Tree
+
+![Tap Room Component Tree](Tap-Room-Components.png)
+
 ## User Stories
 * As a patron, I want to see a list/menu of all available kegs. For each keg, I need to see its name, brand, price and alcoholContent.
 * As an employee, I want to fill out a form when I tap a new keg to add it to the list.
