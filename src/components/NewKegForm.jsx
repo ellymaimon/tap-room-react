@@ -5,8 +5,19 @@ function NewKegForm(){
     <div>
       <style jsx>
         {`
+        form {
+          max-width: 400px;
+          margin: 0 auto;
+          border: 2px solid lightgrey;
+          padding 25px;
+        }
+        label {
+          font-weight: bold;
+        }
         .form-group {
-          background-color: grey;
+          display: grid;
+          grid-template-columns: 25% 75%;
+          margin-bottom: 10px;
         }
         `}
       </style>
@@ -16,15 +27,22 @@ function NewKegForm(){
           <label>Name:</label>
           <input type="text"/>
         </div>
-
-        <label>Brewer</label>
-        <input type="text"/>
-        <label>Description</label>
-        <textarea type="text"/>
-        <label>ABV</label>
-        <input type="text"/>
-        <label>Price</label>
-        <input type="text"/>
+        <div className="form-group">
+          <label>Brewer:</label>
+          <input type="text"/>
+        </div>
+        <div className="form-group">
+          <label>Description:</label>
+          <input type="text"/>
+        </div>
+        <div className="form-group">
+          <label>ABV:</label>
+          <input type="text"/>
+        </div>
+        <div className="form-group">
+          <label>Price:</label>
+          <input type="text"/>
+        </div>
         <button type="submit">Create Keg</button>
       </form>
     </div>
