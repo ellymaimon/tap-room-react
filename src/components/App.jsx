@@ -4,7 +4,7 @@ import Footer from './Footer';
 import KegList from './KegList';
 import Admin from './Admin';
 import NewKegForm from './NewKegForm';
-// import Error404 from './Error404';
+import Error404 from './Error404';
 import { Switch, Route } from "react-router-dom";
 
 function App(){
@@ -22,7 +22,7 @@ function App(){
         <Route exact path='/' component={KegList} />
         <Route path='/admin' component={Admin} />
         <Route path='/newkeg' component={NewKegForm} />
-        {/* <Route component={Error404} /> */}
+        <Route component={Error404} />
       </Switch>
       <Footer/>
     </div>
