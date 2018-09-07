@@ -13,10 +13,10 @@ function App(){
     <div>
       <style global jsx> {`
         * {
-            font-family: sans-serif;
-          }
-      `}
-      </style>
+          font-family: sans-serif;
+        }
+      `} </style>
+      
       <Header/>
       <Switch>
         <Route exact path='/' component={KegList} />
