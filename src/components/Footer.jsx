@@ -6,7 +6,7 @@ function Footer(){
     textDecoration: "none",
     color: "white",
     marginLeft: "50px",
-    fontSize: "24px"
+    fontSize: "18px"
   }
   return (
     <div className="nav">
@@ -15,12 +15,13 @@ function Footer(){
           text-align: center;
         }
         .nav {
-          height: 80px;
+          height: 50px;
           background-color: #505050;
           color: white;
           display: flex;
           align-items: center;
-          border-bottom: 5px solid crimson;
+          border-top: 3px solid goldenrod;
+          margin-top: 25px;
         }
       `}</style>
 
