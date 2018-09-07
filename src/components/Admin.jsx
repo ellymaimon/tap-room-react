@@ -4,16 +4,27 @@ import { Link } from "react-router-dom";
 
 function Admin(){
   return (
-    <div>
+    <div className="container">
       <style jsx>{`
-        div {
+        .container {
           max-width: 1200px;
           margin: 0 auto;
         }
+        .welcome {
+          display: flex;
+          max-width: 600px;
+          margin: 0 auto;
+          justify-content: space-around;
+          align-items: center;
+        }
+        button {
+          height: 30px;
+        }
       `}</style>
-      <h2>Welcome, employee!</h2>
-      <Link to="/newkeg"><button>Add Keg</button></Link>
-      <h1>Kegs Available:</h1>
+      <div className="welcome">
+        <h2>Welcome, employee!</h2>
+        <button><Link to="/newkeg">Add Keg</Link></button>
+      </div>
       <KegList/>
     </div>
   );
