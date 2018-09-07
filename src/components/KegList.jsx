@@ -12,6 +12,7 @@ function KegList() {
         }
       `}
       </style>
+      <h1>What's On Tap?</h1>
       {KEGLIST.masterKegList.map((keg, index) =>
         <Keg {...keg} key={index} />
       )}
