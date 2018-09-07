@@ -6,11 +6,11 @@ function App(){
   return (
     <div>
       <p>App works!</p>
-      {/* <Switch>
+      <Switch>
         <Route exact path='/' component={} />
-        <Route path='/someroute' component={} />
-        <Route component={Error404} />
-      </Switch> */}
+        {/* <Route path='/someroute' component={} />
+        <Route component={Error404} /> */}
+      </Switch>
     </div>
   );
 }
