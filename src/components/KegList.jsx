@@ -1,12 +1,14 @@
 import React from 'react';
 import { KEGLIST } from './MockData';
+import Keg from './Keg';
 
 function KegList() {
-  console.log(KEGLIST);
   
   return (
     <div>
-      <p>{KEGLIST.masterKegList[0].name}</p>
+      {KEGLIST.masterKegList.map((keg, index) =>
+        <Keg {...keg} key={index} />
+      )}
     </div>
   );
 }
