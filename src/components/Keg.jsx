@@ -9,6 +9,7 @@ function Keg(props) {
       <h3><em>{description}</em></h3>
       <h4>ABV: {abv} | Price: {price}</h4>
       <p>There are {remaining} pints remaining.</p>
+      <button>Edit Keg (will only be available if on admin page)</button>
       <hr/>
     </div>
   )
