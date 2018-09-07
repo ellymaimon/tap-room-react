@@ -6,7 +6,7 @@ function Header(){
     textDecoration: "none",
     color: "white",
     marginLeft: "50px",
-    fontSize: "24px"
+    fontSize: "22px"
   }
   return (
     <div>
@@ -15,12 +15,13 @@ function Header(){
           text-align: center;
         }
         .nav {
-          height: 80px;
+          height: 60px;
           background-color: #505050;
           color: white;
           display: flex;
           align-items: center;
-          border-bottom: 5px solid crimson;
+          border-bottom: 4px solid goldenrod;
+          margin-bottom: 25px;
         }
       `}</style>
 
