@@ -42,6 +42,10 @@ This project is a digital tap room initially built out in Angular, and recreated
 
 * [Github Repo] (https://github.com/ellymaimon/tap-room-react)
 
+## Notes
+* How will I be able to change the number of pints in a keg using React?
+* Assuming state will play a big part in the interactivity of the app.
+
 ## License
 
 This software is licensed under the MIT license.
