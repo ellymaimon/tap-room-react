@@ -1,38 +1,30 @@
 import React from "react";
 import PropTypes from 'prop-types'
-import { Link } from "react-router-dom";
 
 function Footer(props) {
-  var link = {
-    textDecoration: "none",
+  const footerContainer = {
+    height: "50px",
+    backgroundColor: "#505050",
     color: "white",
-    marginLeft: "50px",
-    fontSize: "18px"
+    display: "flex",
+    alignItems: "center",
+    borderTop: "3px solid goldenrod",
+    marginTop: "25px"
+  }
+  let currentButton =  <button onClick={props.onAdminLogin}>Admin Login</button>;
+  if (props.isAdmin) {
+    currentButton =  <button>Admin Logout</button>;
   }
   return (
-    <div className="nav">
-     <style jsx>{`
-        h1 {
-          text-align: center;
-        }
-        .nav {
-          height: 50px;
-          background-color: #505050;
-          color: white;
-          display: flex;
-          align-items: center;
-          border-top: 3px solid goldenrod;
-          margin-top: 25px;
-        }
-      `}</style>
-
-      <Link style={link} to="/admin" onClick={props.onAdminLogin}>Admin</Link>
+    <div style={footerContainer}>
+      {currentButton}
     </div>
   );
 }
 
 Footer.propTypes = {
   onAdminLogin: PropTypes.func.isRequired,
+  isAdmin: PropTypes.bool.isRequired
 }
 
 export default Footer;
