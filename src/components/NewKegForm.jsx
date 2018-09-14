@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function NewKegForm(props) {
   const formGroupStyle = {
@@ -30,7 +31,8 @@ function NewKegForm(props) {
       description: description,
       abv: abv,
       price: price,
-      remaining: remaining
+      remaining: remaining,
+      id: v4()
     })
     clearForm(e);
   }
