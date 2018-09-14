@@ -14,7 +14,7 @@ function Footer(props) {
   }
   let currentButton =  <button className="btn" onClick={props.onAdminLogin}>Admin Login</button>;
   if (props.isAdmin) {
-    currentButton =  <button className="btn">Admin Logout</button>;
+    currentButton =  <button className="btn" onClick={props.onAdminLogout}>Admin Logout</button>;
   }
   return (
     <div style={footerContainer}>
@@ -25,6 +25,7 @@ function Footer(props) {
 
 Footer.propTypes = {
   onAdminLogin: PropTypes.func.isRequired,
+  onAdminLogout: PropTypes.func.isRequired,
   isAdmin: PropTypes.bool.isRequired
 }
 
