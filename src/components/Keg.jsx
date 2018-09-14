@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 function Keg(props) {
   const { name, brewer, description, abv, price, remaining } = props;
   let adminView = null;
   if (props.isAdmin) {
-    adminView = <button className="btn">Edit Keg</button>;
+    adminView = <Link to="/editkeg"><button className="btn">Edit Keg</button></Link>;
   }
   return(
     <div>
