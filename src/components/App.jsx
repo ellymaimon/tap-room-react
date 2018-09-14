@@ -114,7 +114,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={() => <Body isAdmin={this.state.admin} kegList={this.state.masterKegList} />} />
           <Route path='/newkeg' render={() => <NewKegForm onAddNewKeg={this.handleAddingNewKeg} />} />
-          <Route path='/editkeg' render={() => <EditKegForm />} />
+          <Route path='/editkeg' component={EditKegForm} />
           <Route component={Error404} />
         </Switch>
         <Footer isAdmin={this.state.admin} onAdminLogin={this.handleAdminLogin} onAdminLogout={this.handleAdminLogout} />
