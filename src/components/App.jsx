@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props)
   
     this.state = {
-       admin: false
+      admin: false
     }
   }
   
@@ -27,7 +27,7 @@ class App extends React.Component {
   
         <Header/>
         <Switch>
-          <Route exact path='/' component={KegList} />
+          <Route exact path='/' render={() => <KegList isAdmin={this.state.admin} />} />
           <Route path='/admin' component={Admin} />
           <Route path='/newkeg' component={NewKegForm} />
           <Route component={Error404} />

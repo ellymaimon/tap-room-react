@@ -27,7 +27,7 @@ function Admin(){
         <h2>Welcome, employee!</h2>
         <button><Link to="/newkeg">Add Keg</Link></button>
       </div>
-      <KegList/>
+      <KegList />
     </div>
   );
 }
