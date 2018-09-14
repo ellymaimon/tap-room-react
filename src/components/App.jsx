@@ -28,6 +28,13 @@ class App extends React.Component {
           * {
             font-family: sans-serif;
           }
+          .btn {
+            min-width: 100px;
+            height: 40px;
+            background-color: goldenrod;
+            font-size: 1em;
+            font-weight: bold;
+          }
         `} </style>
   
         <Header/>
