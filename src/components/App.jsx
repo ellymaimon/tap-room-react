@@ -15,6 +15,7 @@ class App extends React.Component {
       masterKegList: []
     }
     this.handleAdminLogin = this.handleAdminLogin.bind(this)
+    this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this)
   }
 
   handleAdminLogin() {
@@ -22,6 +23,14 @@ class App extends React.Component {
     this.setState({ admin: true });
   }
   
+  handleAddingNewKeg(newKeg) {
+    let newKegList = this.state.masterKegList.slice();
+    newKegList.push(newKeg);
+    this.setState({
+      masterKegList: newKegList
+    });
+  }
+
   render() {
     return (
       <div>
@@ -38,10 +47,10 @@ class App extends React.Component {
           }
         `} </style>
   
-        <Header/>
+        <Header />
         <Switch>
           <Route exact path='/' render={() => <Body isAdmin={this.state.admin} />} />
-          <Route path='/newkeg' component={NewKegForm} />
+          <Route path='/newkeg' render={() => <NewKegForm onAddNewKeg={this.handleAddingNewKeg} />} />
           <Route component={Error404} />
         </Switch>
         <Footer isAdmin={this.state.admin} onAdminLogin={this.handleAdminLogin} />

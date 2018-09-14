@@ -1,53 +1,70 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-function NewKegForm(){
+function NewKegForm(props) {
+  const formGroupStyle = {
+    display: "grid",
+    gridTemplateColumns: "25% 75%",
+    marginBottom: "10px"
+  }
+  const formStyle = {
+    maxWidth: "400px",
+    margin: "0 auto",
+    border: "2px solid lightgrey",
+    padding: "25px",
+    borderRadius: "25px"
+  }
+
+  const handleNewKegFormSubmission = (e) => {
+    e.preventDefault();
+    let name = e.target.name.value;
+    let brewer = e.target.brewer.value;
+    let description = e.target.description.value;
+    let abv = e.target.abv.value;
+    let price = e.target.price.value;
+
+    console.log("Form submitted successfully.");
+
+    props.onAddNewKeg({
+      name: name,
+      brewer: brewer,
+      description: description,
+      abv: abv,
+      price: price
+    })
+  }
+
   return (
     <div>
-      <style jsx>
-        {`
-        form {
-          max-width: 400px;
-          margin: 0 auto;
-          border: 2px solid lightgrey;
-          padding 25px;
-          border-radius: 25px;
-        }
-        label {
-          font-weight: bold;
-        }
-        .form-group {
-          display: grid;
-          grid-template-columns: 25% 75%;
-          margin-bottom: 10px;
-        }
-        `}
-      </style>
-
-      <form>
-        <div className="form-group">
+      <form style={formStyle} onSubmit={handleNewKegFormSubmission}>
+        <div style={formGroupStyle}>
           <label>Name:</label>
-          <input type="text"/>
+          <input type="text" name="name"/>
         </div>
-        <div className="form-group">
+        <div style={formGroupStyle}>
           <label>Brewer:</label>
-          <input type="text"/>
+          <input type="text" name="brewer"/>
         </div>
-        <div className="form-group">
+        <div style={formGroupStyle}>
           <label>Description:</label>
-          <input type="text"/>
+          <input type="text" name="description"/>
         </div>
-        <div className="form-group">
+        <div style={formGroupStyle}>
           <label>ABV:</label>
-          <input type="text"/>
+          <input type="text" name="abv"/>
         </div>
-        <div className="form-group">
+        <div style={formGroupStyle}>
           <label>Price:</label>
-          <input type="text"/>
+          <input type="text" name="price"/>
         </div>
         <button className="btn" type="submit">Create Keg</button>
       </form>
     </div>
   );
+}
+
+NewKegForm.propTypes = {
+  onAddNewKeg: PropTypes.func.isRequired
 }
 
 export default NewKegForm;
