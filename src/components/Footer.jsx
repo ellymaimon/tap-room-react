@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 
-function Footer(){
+function Footer(props) {
   var link = {
     textDecoration: "none",
     color: "white",
@@ -25,9 +26,13 @@ function Footer(){
         }
       `}</style>
 
-      <Link style={link} to="/admin">Admin</Link>
+      <Link style={link} to="/admin" onClick={props.onAdminLogin}>Admin</Link>
     </div>
   );
+}
+
+Footer.propTypes = {
+  onAdminLogin: PropTypes.func.isRequired,
 }
 
 export default Footer;
