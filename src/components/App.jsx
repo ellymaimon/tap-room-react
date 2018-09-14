@@ -7,26 +7,35 @@ import NewKegForm from './NewKegForm';
 import Error404 from './Error404';
 import { Switch, Route } from "react-router-dom";
 
-function App(){
-  return (
-
-    <div>
-      <style global jsx> {`
-        * {
-          font-family: sans-serif;
-        }
-      `} </style>
-
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={KegList} />
-        <Route path='/admin' component={Admin} />
-        <Route path='/newkeg' component={NewKegForm} />
-        <Route component={Error404} />
-      </Switch>
-      <Footer/>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       admin: false
+    }
+  }
+  
+  render() {
+    return (
+      <div>
+        <style global jsx> {`
+          * {
+            font-family: sans-serif;
+          }
+        `} </style>
+  
+        <Header/>
+        <Switch>
+          <Route exact path='/' component={KegList} />
+          <Route path='/admin' component={Admin} />
+          <Route path='/newkeg' component={NewKegForm} />
+          <Route component={Error404} />
+        </Switch>
+        <Footer/>
+      </div>
+    );
+  }
 }
 
 export default App;
