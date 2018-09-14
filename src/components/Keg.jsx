@@ -12,7 +12,9 @@ const Keg = (props) => {
                                      kegDescription: description,
                                      kegAbv: abv,
                                      kegPrice: price,
-                                     kegId: id} }}>
+                                     kegId: id,
+                                     kegRemaining: remaining,
+                                     onEditKeg: props.onEditKeg} }}>
                   <button className="btn">Edit Keg</button>
                 </Link>;
   }
@@ -36,6 +38,7 @@ Keg.propTypes = {
   price: PropTypes.string.isRequired,
   remaining: PropTypes.string.isRequired,
   isAdmin: PropTypes.bool.isRequired,
+  onEditKeg: PropTypes.func.isRequired,
 };
 
 export default Keg;
