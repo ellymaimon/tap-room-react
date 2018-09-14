@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 
 function Footer(props) {
   const footerContainer = {
@@ -14,7 +15,7 @@ function Footer(props) {
   }
   let currentButton =  <button className="btn" onClick={props.onAdminLogin}>Admin Login</button>;
   if (props.isAdmin) {
-    currentButton =  <button className="btn" onClick={props.onAdminLogout}>Admin Logout</button>;
+    currentButton =  <Link to="/"><button className="btn" onClick={props.onAdminLogout}>Admin Logout</button></Link>;
   }
   return (
     <div style={footerContainer}>
