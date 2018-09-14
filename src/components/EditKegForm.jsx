@@ -25,16 +25,26 @@ const EditKegForm = (props) => {
     let price = e.target.price.value;
     let remaining = e.target.remaining.value;
 
-    props.location.state.onEditKeg({
-      name: name,
-      brewer: brewer,
-      description: description,
-      abv: abv,
-      price: price,
-      remaining: remaining,
-      id: props.location.state.kegId
-    })
-    clearForm(e, name, brewer, description, abv, price, remaining);
+    if (name == "" || brewer == "" || description == "" || abv == "" || price == "" || remaining == "") {
+      alert("Oops, could not submit your form. Please fill out all of the inputs in the form.")
+    } else if (remaining < 0 || remaining > 124 || isNaN(remaining)) {
+      alert("Oops, could not submit your form. Please enter a number between 0 and 124 for the remaining pints.")
+    } else if (isNaN(abv)) {
+      alert("Oops, could not submit your form. Please enter a number for the abv.")
+    } else if (isNaN(price)) {
+      alert("Oops, could not submit your form. Please enter a number for the price.")
+    } else {
+      props.location.state.onEditKeg({
+        name: name,
+        brewer: brewer,
+        description: description,
+        abv: abv,
+        price: price,
+        remaining: remaining,
+        id: props.location.state.kegId
+      })
+      clearForm(e, name, brewer, description, abv, price, remaining);
+    }
   }
 
   const clearForm = (e, name, brewer, description, abv, price, remaining) => {
