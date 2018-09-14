@@ -39,6 +39,7 @@ This project is a digital tap room initially built out in Angular, and recreated
 ## Technologies Used
 
 * ReactJS
+* React Router
 * JavaScript (ES6)
 * Node.js
 * Node Package Manager (Npm)
