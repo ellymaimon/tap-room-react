@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-function Keg(props) {
-  const { name, brewer, description, abv, price, remaining } = props;
+const Keg = (props) => {
+  const { name, brewer, description, abv, price, remaining, id } = props;
   let adminView = null;
   if (props.isAdmin) {
-    adminView = <Link to="/editkeg"><button className="btn">Edit Keg</button></Link>;
+    adminView = <Link to={{ pathname: "/editkeg", state: {kegId: id}}}>
+                  <button className="btn">Edit Keg</button>
+                </Link>;
   }
   return(
     <div>
