@@ -14,6 +14,11 @@ class App extends React.Component {
     this.state = {
       admin: false
     }
+    this.handleAdminLogin = this.handleAdminLogin.bind(this)
+  }
+
+  handleAdminLogin() {
+    this.setState({ admin: true });
   }
   
   render() {
@@ -32,7 +37,7 @@ class App extends React.Component {
           <Route path='/newkeg' component={NewKegForm} />
           <Route component={Error404} />
         </Switch>
-        <Footer/>
+        <Footer onAdminLogin={this.handleAdminLogin} />
       </div>
     );
   }
