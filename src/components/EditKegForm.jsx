@@ -1,6 +1,7 @@
 import React from 'react'
 
 const EditKegForm = (props) => {
+
   const formGroupStyle = {
     display: "grid",
     gridTemplateColumns: "25% 75%",
@@ -14,12 +15,15 @@ const EditKegForm = (props) => {
     borderRadius: "25px"
   }
 
+  const {kegID} = props.location.state.kegId
+  console.log(props.location.state.kegId);
+
   return (
     <div>
       <form style={formStyle}>
         <div style={formGroupStyle}>
           <label>New Name:</label>
-          <input type="text" name="name" placeholder="old name will go here"/>
+          <input type="text" name="name" placeholder="beer"/>
         </div>
         <div style={formGroupStyle}>
           <label>New Brewer:</label>
