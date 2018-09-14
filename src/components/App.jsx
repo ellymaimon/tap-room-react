@@ -49,7 +49,7 @@ class App extends React.Component {
   
         <Header />
         <Switch>
-          <Route exact path='/' render={() => <Body isAdmin={this.state.admin} />} />
+          <Route exact path='/' render={() => <Body isAdmin={this.state.admin} kegList={this.state.masterKegList} />} />
           <Route path='/newkeg' render={() => <NewKegForm onAddNewKeg={this.handleAddingNewKeg} />} />
           <Route component={Error404} />
         </Switch>
