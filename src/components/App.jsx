@@ -17,7 +17,7 @@ class App extends React.Component {
           name: 'Ruby Zozzle',
           brewer: 'Hi-Wheel',
           description: 'Sparkling Wine & Grapefruit',
-          abv: '6.8%',
+          abv: '6.8',
           price: '7',
           remaining: '20'
         },
@@ -25,7 +25,7 @@ class App extends React.Component {
           name: 'Tart N Juicy',
           brewer: 'Epic',
           description: 'Sour IPA',
-          abv: '4.5%',
+          abv: '4.5',
           price: '6',
           remaining: '60'
         },
@@ -33,7 +33,7 @@ class App extends React.Component {
           name: 'Hamm\'s',
           brewer: 'Miller/Coors',
           description: 'American Lager',
-          abv: '4.7%',
+          abv: '4.7',
           price: '3',
           remaining: '65'
         },
@@ -41,7 +41,7 @@ class App extends React.Component {
           name: 'Prismatic',
           brewer: 'Ninkasi',
           description: 'Juicy IPA',
-          abv:  '5.9%',
+          abv:  '5.9',
           price: '6',
           remaining: '75'
         },
@@ -49,7 +49,7 @@ class App extends React.Component {
           name: 'Juicy Haze',
           brewer: 'New Belgium',
           description: 'India Pale Ale',
-          abv:  '7.5%',
+          abv:  '7.5',
           price: '6',
           remaining: '18'
         },
@@ -57,19 +57,25 @@ class App extends React.Component {
           name: '8 Hop',
           brewer: 'New Belgium',
           description: 'Pale Ale',
-          abv:  '5.5%',
+          abv:  '5.5',
           price: '6',
           remaining: '58'
         }
       ]
     }
     this.handleAdminLogin = this.handleAdminLogin.bind(this)
+    this.handleAdminLogout = this.handleAdminLogout.bind(this)
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this)
   }
 
   handleAdminLogin() {
     window.scrollTo(0, 0);
     this.setState({ admin: true });
+  }
+
+  handleAdminLogout() {
+    window.scrollTo(0, 0);
+    this.setState({ admin: false });
   }
   
   handleAddingNewKeg(newKeg) {
@@ -102,7 +108,7 @@ class App extends React.Component {
           <Route path='/newkeg' render={() => <NewKegForm onAddNewKeg={this.handleAddingNewKeg} />} />
           <Route component={Error404} />
         </Switch>
-        <Footer isAdmin={this.state.admin} onAdminLogin={this.handleAdminLogin} />
+        <Footer isAdmin={this.state.admin} onAdminLogin={this.handleAdminLogin} onAdminLogout={this.handleAdminLogout} />
       </div>
     );
   }
