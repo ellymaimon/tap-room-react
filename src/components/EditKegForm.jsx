@@ -16,13 +16,50 @@ const EditKegForm = (props) => {
     borderRadius: "25px"
   }
 
+  const handleEditKegFormSubmission = (e) => {
+    e.preventDefault();
+    let name = e.target.name.value;
+    let brewer = e.target.brewer.value;
+    let description = e.target.description.value;
+    let abv = e.target.abv.value;
+    let price = e.target.price.value;
+    let remaining = e.target.remaining.value;
+
+    props.location.state.onEditKeg({
+      name: name,
+      brewer: brewer,
+      description: description,
+      abv: abv,
+      price: price,
+      remaining: remaining,
+      id: props.location.state.kegId
+    })
+    clearForm(e, name, brewer, description, abv, price, remaining);
+  }
+
+  const clearForm = (e, name, brewer, description, abv, price, remaining) => {
+    e.target.name.value = "";
+    e.target.brewer.value = "";
+    e.target.description.value = "";
+    e.target.abv.value = "";
+    e.target.price.value = "";
+    e.target.remaining.value = "";
+    
+    e.target.name.placeholder = `Now: ${name}`;
+    e.target.brewer.placeholder = `Now: ${brewer}`;
+    e.target.description.placeholder = `Now: ${description}`;
+    e.target.abv.placeholder = `Now: ${abv}`;
+    e.target.price.placeholder = `Now: ${price}`;
+    e.target.remaining.placeholder = `Now: ${remaining}`;
+  }
+
   if(props.location.state === undefined) {
     return <Redirect to="/" />
   }
   else {
     return (
       <div>
-        <form style={formStyle}>
+        <form style={formStyle} onSubmit={handleEditKegFormSubmission}>
           <div style={formGroupStyle}>
             <label>New Name:</label>
             <input type="text" name="name" placeholder={`Old name: ${props.location.state.kegName}`} />
@@ -42,6 +79,10 @@ const EditKegForm = (props) => {
           <div style={formGroupStyle}>
             <label>New Price:</label>
             <input type="text" name="price" placeholder={`Old price: ${props.location.state.kegPrice}`}/>
+          </div>
+          <div style={formGroupStyle}>
+            <label>How many pints remanining:</label>
+            <input type="text" name="remaining" placeholder={`Old remainder: ${props.location.state.kegRemaining}`}/>
           </div>
           <button className="btn" type="submit">Finish Editing Keg</button>
         </form>      
