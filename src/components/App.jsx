@@ -33,8 +33,8 @@ class App extends React.Component {
   
         <Header/>
         <Switch>
-          <Route exact path='/' render={() => <KegList isAdmin={this.state.admin} />} />
-          <Route path='/admin' render={() => <Admin isAdmin={this.state.admin} />} />
+          <Route exact path='/' render={() => <Body isAdmin={this.state.admin} />} />
+          {/* <Route path='/admin' render={() => <Admin isAdmin={this.state.admin} />} /> */}
           <Route path='/newkeg' component={NewKegForm} />
           <Route component={Error404} />
         </Switch>
