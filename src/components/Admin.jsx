@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import KegList from './KegList';
 import { Link } from "react-router-dom";
 
-function Admin(){
+function Admin(props) {
   return (
     <div className="container">
       <style jsx>{`
@@ -27,9 +28,13 @@ function Admin(){
         <h2>Welcome, employee!</h2>
         <button><Link to="/newkeg">Add Keg</Link></button>
       </div>
-      <KegList />
+      <KegList isAdmin={props.isAdmin} />
     </div>
   );
+}
+
+Admin.propTypes = {
+  isAdmin: PropTypes.bool.isRequired
 }
 
 export default Admin;
