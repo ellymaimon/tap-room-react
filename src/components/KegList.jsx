@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { KEGLIST } from './MockData';
 import Keg from './Keg';
 
 function KegList(props) {
