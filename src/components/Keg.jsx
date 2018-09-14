@@ -11,7 +11,7 @@ function Keg(props) {
     <div>
       <h2>{name} by {brewer}</h2>
       <h3><em>{description}</em></h3>
-      <h4>ABV: {abv} | Price: ${price}</h4>
+      <h4>ABV: {abv}% | Price: ${price}</h4>
       <p>There are {remaining} pints remaining.</p>
       {adminView}
       <hr/>

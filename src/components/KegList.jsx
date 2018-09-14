@@ -6,7 +6,7 @@ import Keg from './Keg';
 function KegList(props) {
   return (
     <div>
-      {KEGLIST.masterKegList.map((keg, index) =>
+      {props.kegList.map((keg, index) =>
         <Keg {...keg}
              key={index}
              isAdmin={props.isAdmin}/>
@@ -16,7 +16,8 @@ function KegList(props) {
 }
 
 KegList.propTypes = {
-  isAdmin: PropTypes.bool.isRequired
+  isAdmin: PropTypes.bool.isRequired,
+  kegList: PropTypes.array.isRequired
 }
 
 export default KegList;
