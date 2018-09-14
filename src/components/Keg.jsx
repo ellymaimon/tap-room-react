@@ -5,7 +5,7 @@ function Keg(props) {
   const { name, brewer, description, abv, price, remaining } = props;
   let adminView = null;
   if (props.isAdmin) {
-    adminView = <button>Edit Keg</button>;
+    adminView = <button className="btn">Edit Keg</button>;
   }
   return(
     <div>
