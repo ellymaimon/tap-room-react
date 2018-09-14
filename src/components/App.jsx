@@ -74,6 +74,7 @@ class App extends React.Component {
     this.handleAdminLogin = this.handleAdminLogin.bind(this)
     this.handleAdminLogout = this.handleAdminLogout.bind(this)
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this)
+    this.handleEditingKeg = this.handleEditingKeg.bind(this)
   }
 
   handleAdminLogin() {
@@ -89,6 +90,23 @@ class App extends React.Component {
   handleAddingNewKeg(newKeg) {
     let newKegList = this.state.masterKegList.slice();
     newKegList.push(newKeg);
+    this.setState({
+      masterKegList: newKegList
+    });
+  }
+
+  handleEditingKeg(newkeg) {
+    let newKegList = this.state.masterKegList.slice();
+    newKegList.forEach(keg => {
+      if(keg.id === newkeg.id) {
+        keg.name = newkeg.name;
+        keg.brewer = newkeg.brewer;
+        keg.description = newkeg.description;
+        keg.abv = newkeg.abv;
+        keg.price = newkeg.price;
+        keg.remaining = newkeg.remaining;
+      }
+    });
     this.setState({
       masterKegList: newKegList
     });
@@ -112,7 +130,9 @@ class App extends React.Component {
   
         <Header />
         <Switch>
-          <Route exact path='/' render={() => <Body isAdmin={this.state.admin} kegList={this.state.masterKegList} />} />
+          <Route exact path='/' render={() => <Body isAdmin={this.state.admin}
+                                                    kegList={this.state.masterKegList} 
+                                                    onEditKeg={this.handleEditingKeg} />} />
           <Route path='/newkeg' render={() => <NewKegForm onAddNewKeg={this.handleAddingNewKeg} />} />
           <Route path='/editkeg' component={EditKegForm} />
           <Route component={Error404} />
