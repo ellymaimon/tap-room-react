@@ -12,12 +12,13 @@ class App extends React.Component {
     super(props)
   
     this.state = {
-      admin: false
+      admin: false,
     }
     this.handleAdminLogin = this.handleAdminLogin.bind(this)
   }
 
   handleAdminLogin() {
+    window.scrollTo(0, 0);
     this.setState({ admin: true });
   }
   
