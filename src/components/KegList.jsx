@@ -5,9 +5,9 @@ import Keg from './Keg';
 function KegList(props) {
   return (
     <div>
-      {props.kegList.map((keg, index) =>
+      {props.kegList.map((keg) =>
         <Keg {...keg}
-             key={index}
+             key={keg.id}
              isAdmin={props.isAdmin}/>
       )}
     </div>
