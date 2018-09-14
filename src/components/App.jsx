@@ -12,6 +12,7 @@ class App extends React.Component {
   
     this.state = {
       admin: false,
+      masterKegList: []
     }
     this.handleAdminLogin = this.handleAdminLogin.bind(this)
   }
