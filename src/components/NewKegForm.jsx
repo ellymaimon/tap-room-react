@@ -22,14 +22,25 @@ function NewKegForm(props) {
     let description = e.target.description.value;
     let abv = e.target.abv.value;
     let price = e.target.price.value;
+    let remaining = "124";
 
     props.onAddNewKeg({
       name: name,
       brewer: brewer,
       description: description,
       abv: abv,
-      price: price
+      price: price,
+      remaining: remaining
     })
+    clearForm(e);
+  }
+
+  const clearForm = (e) => {
+    e.target.name.value = "";
+    e.target.brewer.value = "";
+    e.target.description.value = "";
+    e.target.abv.value = "";
+    e.target.price.value = "";
   }
 
   return (
