@@ -44,7 +44,7 @@ function NewKegForm(){
           <label>Price:</label>
           <input type="text"/>
         </div>
-        <button type="submit">Create Keg</button>
+        <button className="btn" type="submit">Create Keg</button>
       </form>
     </div>
   );
