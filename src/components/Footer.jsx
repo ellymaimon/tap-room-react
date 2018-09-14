@@ -9,11 +9,12 @@ function Footer(props) {
     display: "flex",
     alignItems: "center",
     borderTop: "3px solid goldenrod",
-    marginTop: "25px"
+    marginTop: "25px",
+    padding: "25px"
   }
-  let currentButton =  <button onClick={props.onAdminLogin}>Admin Login</button>;
+  let currentButton =  <button className="btn" onClick={props.onAdminLogin}>Admin Login</button>;
   if (props.isAdmin) {
-    currentButton =  <button>Admin Logout</button>;
+    currentButton =  <button className="btn">Admin Logout</button>;
   }
   return (
     <div style={footerContainer}>
