@@ -6,7 +6,13 @@ const Keg = (props) => {
   const { name, brewer, description, abv, price, remaining, id } = props;
   let adminView = null;
   if (props.isAdmin) {
-    adminView = <Link to={{ pathname: "/editkeg", state: {kegId: id}}}>
+    adminView = <Link to={{ pathname: "/editkeg",
+                            state: { kegName: name, 
+                                     kegBrewer: brewer,
+                                     kegDescription: description,
+                                     kegAbv: abv,
+                                     kegPrice: price,
+                                     kegId: id} }}>
                   <button className="btn">Edit Keg</button>
                 </Link>;
   }
