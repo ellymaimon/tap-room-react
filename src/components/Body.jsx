@@ -32,13 +32,14 @@ const Body = (props) => {
     <div style={bodyContainer}>
       <h1>What's On Tap?</h1>
       {adminView}
-      <KegList isAdmin={props.isAdmin} />
+      <KegList isAdmin={props.isAdmin} kegList={props.kegList} />
     </div>
   );
 }
 
 Body.propTypes = {
-  isAdmin: PropTypes.bool.isRequired
+  isAdmin: PropTypes.bool.isRequired,
+  kegList: PropTypes.array.isRequired
 }
 
 export default Body
