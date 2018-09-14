@@ -1,8 +1,7 @@
 import React from "react";
 import Header from './Header';
 import Footer from './Footer';
-import KegList from './KegList';
-import Admin from './Admin';
+import Body from './Body';
 import NewKegForm from './NewKegForm';
 import Error404 from './Error404';
 import { Switch, Route } from "react-router-dom";
@@ -34,11 +33,10 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={() => <Body isAdmin={this.state.admin} />} />
-          {/* <Route path='/admin' render={() => <Admin isAdmin={this.state.admin} />} /> */}
           <Route path='/newkeg' component={NewKegForm} />
           <Route component={Error404} />
         </Switch>
-        <Footer onAdminLogin={this.handleAdminLogin} />
+        <Footer isAdmin={this.state.admin} onAdminLogin={this.handleAdminLogin} />
       </div>
     );
   }
