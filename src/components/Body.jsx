@@ -24,7 +24,7 @@ const Body = (props) => {
   if(props.isAdmin) {
     adminView = <div style={adminWelcomeContainer}>
                   <h2>Welcome, employee!</h2>
-                  <Link to="/newkeg">Add Keg</Link>
+                  <Link to="/newkeg"><button className="btn">Add Keg</button></Link>
                 </div>
   }
 
