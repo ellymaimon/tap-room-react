@@ -23,8 +23,6 @@ function NewKegForm(props) {
     let abv = e.target.abv.value;
     let price = e.target.price.value;
 
-    console.log("Form submitted successfully.");
-
     props.onAddNewKeg({
       name: name,
       brewer: brewer,
