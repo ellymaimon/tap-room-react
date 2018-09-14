@@ -13,16 +13,11 @@ function Header() {
     textAlign: "center"
   }
 
-  const linkStyle = {
-    color: "white",
-    fontSize: "1.2em"
-  }
-
   return (
     <div>
       <h1 style={headerStyle}>🍺 React Tap Room 🍺</h1>
       <div style={headerContainer}>
-        <Link style={linkStyle} to="/">Home</Link>
+        <Link to="/"><button className="btn">Home</button></Link>
       </div>
     </div>
   );
