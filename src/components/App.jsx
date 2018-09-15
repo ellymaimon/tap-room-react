@@ -75,6 +75,7 @@ class App extends React.Component {
     this.handleAdminLogout = this.handleAdminLogout.bind(this)
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this)
     this.handleEditingKeg = this.handleEditingKeg.bind(this)
+    this.handleSellingPint = this.handleSellingPint.bind(this)
   }
 
   handleAdminLogin() {
@@ -95,16 +96,35 @@ class App extends React.Component {
     });
   }
 
-  handleEditingKeg(newkeg) {
+  handleEditingKeg(selectedKeg) {
     let newKegList = this.state.masterKegList.slice();
     newKegList.forEach(keg => {
-      if(keg.id === newkeg.id) {
-        keg.name = newkeg.name;
-        keg.brewer = newkeg.brewer;
-        keg.description = newkeg.description;
-        keg.abv = newkeg.abv;
-        keg.price = newkeg.price;
-        keg.remaining = newkeg.remaining;
+      if(keg.id === selectedKeg.id) {
+        keg.name = selectedKeg.name;
+        keg.brewer = selectedKeg.brewer;
+        keg.description = selectedKeg.description;
+        keg.abv = selectedKeg.abv;
+        keg.price = selectedKeg.price;
+        keg.remaining = selectedKeg.remaining;
+      }
+    });
+    this.setState({
+      masterKegList: newKegList
+    });
+  }
+
+  handleSellingPint(selectedKegId) {
+    let newKegList = this.state.masterKegList.slice();
+    newKegList.forEach(keg => {
+      if(keg.id === selectedKegId) {
+        let newRemaining = parseInt(keg.remaining);
+        newRemaining--;
+        if(newRemaining >= 0) {
+          keg.remaining = newRemaining.toString();
+        } else {
+          keg.remaining = "0"
+        }
+        
       }
     });
     this.setState({
@@ -132,7 +152,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={() => <Body isAdmin={this.state.admin}
                                                     kegList={this.state.masterKegList} 
-                                                    onEditKeg={this.handleEditingKeg} />} />
+                                                    onEditKeg={this.handleEditingKeg}
+                                                    onSellingPint={this.handleSellingPint} />} />
           <Route path='/newkeg' render={() => <NewKegForm onAddNewKeg={this.handleAddingNewKeg} />} />
           <Route path='/editkeg' component={EditKegForm} />
           <Route component={Error404} />
