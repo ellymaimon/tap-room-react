@@ -9,7 +9,8 @@ function KegList(props) {
         <Keg {...keg}
              key={keg.id}
              isAdmin={props.isAdmin}
-             onEditKeg = {props.onEditKeg} />
+             onEditKeg = {props.onEditKeg} 
+             onSellingPint = {props.onSellingPint} />
       )}
     </div>
   );
@@ -18,7 +19,8 @@ function KegList(props) {
 KegList.propTypes = {
   isAdmin: PropTypes.bool.isRequired,
   kegList: PropTypes.array.isRequired,
-  onEditKeg: PropTypes.func.isRequired
+  onEditKeg: PropTypes.func.isRequired,
+  onSellingPint: PropTypes.func.isRequired
 }
 
 export default KegList;
