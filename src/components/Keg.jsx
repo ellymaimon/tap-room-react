@@ -4,19 +4,26 @@ import { Link } from "react-router-dom";
 
 const Keg = (props) => {
   const { name, brewer, description, abv, price, remaining, id } = props;
+
+  const handleSellingPint = () => {
+    props.onSellingPint(id);
+  }
+  
   let adminView = null;
   if (props.isAdmin) {
-    adminView = <Link to={{ pathname: "/editkeg",
-                            state: { kegName: name, 
-                                     kegBrewer: brewer,
-                                     kegDescription: description,
-                                     kegAbv: abv,
-                                     kegPrice: price,
-                                     kegId: id,
-                                     kegRemaining: remaining,
-                                     onEditKeg: props.onEditKeg} }}>
-                  <button className="btn">Edit Keg</button>
-                </Link>;
+    adminView = <div>
+                  <Link to={{ pathname: "/editkeg",
+                              state: { kegName: name, 
+                                      kegBrewer: brewer,
+                                      kegDescription: description,
+                                      kegAbv: abv,
+                                      kegPrice: price,
+                                      kegId: id,
+                                      kegRemaining: remaining,
+                                      onEditKeg: props.onEditKeg} }}>
+                    <button className="btn">Edit Keg</button></Link>
+                    <button className="btn" onClick={handleSellingPint}>Sell a pint!</button>
+                </div>;
   }
   return(
     <div>
@@ -39,6 +46,7 @@ Keg.propTypes = {
   remaining: PropTypes.string.isRequired,
   isAdmin: PropTypes.bool.isRequired,
   onEditKeg: PropTypes.func.isRequired,
+  onSellingPint: PropTypes.func.isRequired
 };
 
 export default Keg;
